@@ -36,9 +36,7 @@ class ForYouSectionWidget extends StatelessWidget {
                     label: forYou.label,
                     semantic: forYou.semantic,
                     semanticOrdinal: forYou.semanticOrdinal + 0.1),
-                style: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                ),
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               LabelWidget(
                 item: ItemModel(

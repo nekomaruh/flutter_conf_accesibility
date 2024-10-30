@@ -62,6 +62,7 @@ class _DetailPageViewState extends State<DetailPageView>
         builder: (BuildContext context, AsyncSnapshot<Food> snapshot) {
           if (snapshot.hasData) {
             return ListView(
+              padding: EdgeInsets.only(bottom: 30),
               children: [
                 Image.asset(
                   snapshot.data?.imageUrl ?? '',

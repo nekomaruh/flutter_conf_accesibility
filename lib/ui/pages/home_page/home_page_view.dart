@@ -59,13 +59,16 @@ class _HomePageState extends State<HomePage> implements HomePageInterface {
             horizontal: MediaQuery.of(context).size.width * 0.05,
           ),
           children: [
+            // Title
             LabelWidget(
               item: language?.title,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            // Subtitle
             LabelWidget(
               item: language?.subTitle,
             ),
+            // Carousel
             Semantics(
               sortKey: const OrdinalSortKey(0),
               child: SizedBox(
@@ -79,14 +82,18 @@ class _HomePageState extends State<HomePage> implements HomePageInterface {
               ),
             ),
             const SizedBox(height: 10),
+            // Search bar
             SearchFoodFoodWidget(search: language.search),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
+            // Category Title
             LabelWidget(
               item: language.categorySubtitle,
-              style: const TextStyle(fontWeight: FontWeight.w700, height: 2.5),
+              style: Theme.of(context).textTheme.titleLarge,
             ),
+            // Category List
             const FoodCategoryRowWidget(),
             const SizedBox(height: 20),
+            // Grid Section
             ForYouSectionWidget(
               forYou: language.forYou,
               seeMore: language.seeMore,

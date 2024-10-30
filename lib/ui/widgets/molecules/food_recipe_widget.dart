@@ -77,36 +77,35 @@ class FoodRecipeWidget extends StatelessWidget {
                             fontSize: 17,
                             letterSpacing: -0.67),
                       ),
-                      SizedBox(
-                        height: 170.0,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: food?.ingredients?.length ?? 0,
-                          itemBuilder: (BuildContext context, int index) {
-                            final Ingredients? ingredients =
-                                food?.ingredients?[index];
-                            return Row(children: [
-                              Container(
-                                margin: const EdgeInsets.all(3),
-                                padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: const Color(0xFFEA4F46),
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        itemCount: food?.ingredients?.length ?? 0,
+                        itemBuilder: (BuildContext context, int index) {
+                          final Ingredients? ingredients =
+                          food?.ingredients?[index];
+                          return Row(children: [
+                            Container(
+                              margin: const EdgeInsets.all(3),
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFEA4F46),
+                                borderRadius: BorderRadius.circular(50),
                               ),
-                              LabelWidget(
-                                item: ItemModel(
-                                  label:
-                                      '${ingredients?.quantity ?? ''} ${ingredients?.unitMeasure ?? ''} ${ingredients?.name ?? ''}',
-                                ),
-                                style: const TextStyle(
-                                    color: Color(0xFFB6B6B6),
-                                    letterSpacing: -0.67),
+                            ),
+                            LabelWidget(
+                              item: ItemModel(
+                                label:
+                                '${ingredients?.quantity ?? ''} ${ingredients?.unitMeasure ?? ''} ${ingredients?.name ?? ''}',
                               ),
-                            ]);
-                          },
-                        ),
-                      )
+                              style: const TextStyle(
+                                  color: Color(0xFFB6B6B6),
+                                  letterSpacing: -0.67),
+                            ),
+                          ]);
+                        },
+                      ),
                     ],
                   ),
                 ),
