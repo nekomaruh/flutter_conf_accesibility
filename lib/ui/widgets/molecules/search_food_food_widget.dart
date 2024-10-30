@@ -21,15 +21,17 @@ class SearchFoodFoodWidget extends StatelessWidget {
       child: ExcludeSemantics(
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              color: const Color(0xFFF9F9F9)),
+            borderRadius: BorderRadius.circular(10.0),
+            color: const Color(0xFFF9F9F9),
+          ),
           child: TextField(
             controller: TextEditingController(),
             decoration: InputDecoration(
               border: InputBorder.none,
+              floatingLabelBehavior: FloatingLabelBehavior.never,
               prefixIcon: const Icon(Icons.search),
               prefixIconColor: const Color(0xFFF4AA4A),
-              hintText: search?.label,
+              labelText: search?.label,
               hintStyle: const TextStyle(color: Colors.black),
             ),
           ),

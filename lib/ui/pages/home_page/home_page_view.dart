@@ -19,8 +19,12 @@ import '../../widgets/atoms/label_widget.dart';
 class HomePage extends StatefulWidget {
   final BannerUsecase bannerUsecase;
   final FoodUsecase foodUsecase;
-  const HomePage(
-      {super.key, required this.bannerUsecase, required this.foodUsecase});
+
+  const HomePage({
+    super.key,
+    required this.bannerUsecase,
+    required this.foodUsecase,
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -29,33 +33,38 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> implements HomePageInterface {
   late final Widget myfoods;
   late final HomePagePresenter _presenter;
+
   @override
   void initState() {
     super.initState();
     _presenter = HomePagePresenter(
-        bannerUsercase: widget.bannerUsecase,
-        fooUsecase: widget.foodUsecase,
-        interface: this);
+      bannerUsercase: widget.bannerUsecase,
+      fooUsecase: widget.foodUsecase,
+      interface: this,
+    );
   }
 
   int activePage = 0;
+
   @override
   Widget build(BuildContext context) {
-    final languaje =
+    final language =
         MyAppLocalizations.of(context)?.getJsonTranslate().homeModel;
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: ListView(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: ListView(
           padding: EdgeInsets.symmetric(
-              vertical: MediaQuery.of(context).size.height * 0.1,
-              horizontal: MediaQuery.of(context).size.width * 0.05),
+            vertical: MediaQuery.of(context).size.height * 0.1,
+            horizontal: MediaQuery.of(context).size.width * 0.05,
+          ),
           children: [
             LabelWidget(
-              item: languaje?.title,
-              style: const TextStyle(fontWeight: FontWeight.w700, height: 2.5),
+              item: language?.title,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             LabelWidget(
-              item: languaje?.subTitle,
+              item: language?.subTitle,
             ),
             Semantics(
               sortKey: const OrdinalSortKey(0),
@@ -63,48 +72,60 @@ class _HomePageState extends State<HomePage> implements HomePageInterface {
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.2,
                 child: BannersWidget(
-                    itemModel: languaje!.banner,
-                    banners: _presenter.getBanners(),
-                    action: () => getBanners(context)),
+                  itemModel: language!.banner,
+                  banners: _presenter.getBanners(),
+                  action: () => getBanners(context),
+                ),
               ),
             ),
-            SearchFoodFoodWidget(search: languaje.search),
+            const SizedBox(height: 10),
+            SearchFoodFoodWidget(search: language.search),
+            const SizedBox(height: 10),
             LabelWidget(
-              item: languaje.categorySubtitle,
+              item: language.categorySubtitle,
               style: const TextStyle(fontWeight: FontWeight.w700, height: 2.5),
             ),
             const FoodCategoryRowWidget(),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             ForYouSectionWidget(
-              forYou: languaje.forYou,
-              seeMore: languaje.seeMore,
+              forYou: language.forYou,
+              seeMore: language.seeMore,
               foods: _presenter.getFoodForYou(),
               action: (label) => goToDetailsPage(context, label),
             )
           ],
         ),
-        bottomNavigationBar:
-            ExcludeSemantics(child: const CustomBottomNavigationBar()));
+      ),
+      bottomNavigationBar: const ExcludeSemantics(
+        child: CustomBottomNavigationBar(),
+      ),
+    );
   }
 
   @override
   void goToDetailsPage(BuildContext context, String detailFoodName) {
-    Navigator.of(context).push(MaterialPageRoute(
+    Navigator.of(context).push(
+      MaterialPageRoute(
         builder: (BuildContext context) => DetailPageView(
-              foodName: detailFoodName,
-              foodUsecase: FoodUsecase(
-                foodGateway: FoodLocalRepository(
-                  LocalStorage(),
-                ),
-              ),
-            )));
+          foodName: detailFoodName,
+          foodUsecase: FoodUsecase(
+            foodGateway: FoodLocalRepository(
+              LocalStorage(),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   @override
   void getBanners(BuildContext context) async {
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('Banner deslizado')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text(
+          'Banner deslizado',
+        ),
+      ),
+    );
   }
 }

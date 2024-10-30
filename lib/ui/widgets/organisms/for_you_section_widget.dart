@@ -11,12 +11,14 @@ class ForYouSectionWidget extends StatelessWidget {
   final ItemModel seeMore;
   final Future<List<Food>> foods;
   final void Function(String)? action;
-  const ForYouSectionWidget(
-      {super.key,
-      required this.forYou,
-      required this.seeMore,
-      required this.foods,
-      this.action});
+
+  const ForYouSectionWidget({
+    super.key,
+    required this.forYou,
+    required this.seeMore,
+    required this.foods,
+    this.action,
+  });
 
   @override
   Widget build(BuildContext context) {

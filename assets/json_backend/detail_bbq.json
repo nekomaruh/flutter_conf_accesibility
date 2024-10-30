@@ -1,0 +1,55 @@
+{
+    "name": "BBQ Ribs",
+    "image": "assets/images/bbq_ribs_details.png",
+    "time": "45 mins",
+    "quantity": "Para 2 personas",
+    "calories": "774 calorias",
+    "description": "Las costillas a la barbacoa son un plato americano sabroso y ahumado que incluye costillitas de cerdo cubiertas con una deliciosa mezcla de especias y cocinadas a fuego lento hasta que estén tiernas en el horno.",
+    "ingredients": [
+        {
+            "ingredient_name": "de cerdo",
+            "unit_measure": "costillitas",
+            "quantity": "2"
+        },
+        {
+            "ingredient_name": "salsa barbacoa",
+            "unit_measure": "taza",
+            "quantity": "1"
+        },
+        {
+            "ingredient_name": "azucar morena",
+            "unit_measure": "taza",
+            "quantity": "1/4"
+        },
+        {
+            "ingredient_name": "paprika",
+            "unit_measure": "cucharadas",
+            "quantity": "2"
+        },
+        {
+            "ingredient_name": "ajo en polvo",
+            "unit_measure": "cucharadas",
+            "quantity": "2"
+        },
+        {
+            "ingredient_name": "cebolla en polvo",
+            "unit_measure": "cucharadas",
+            "quantity": "1"
+        },
+        {
+            "ingredient_name": "pimiento en polvo",
+            "unit_measure": "cucharadas",
+            "quantity": "1"
+        },
+        {
+            "ingredient_name": "sal",
+            "unit_measure": "cucharada",
+            "quantity": "1"
+        },
+        {
+            "ingredient_name": "pimienta negra",
+            "unit_measure": "cucharadita",
+            "quantity": "1"
+        }
+    ]
+}
