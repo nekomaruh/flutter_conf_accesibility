@@ -39,7 +39,8 @@ Semantics(
 
 # 3. Running App
 
-![Screen_recording_20241102_085959-ezgif com-speed](https://github.com/user-attachments/assets/5ee5e38c-4222-4764-83b0-a46a1139172f)
+<img width="330" alt="Captura de pantalla 2024-11-02 a la(s) 11 09 38" src="https://github.com/user-attachments/assets/6da22fa0-7244-4dd4-b10d-f457225af4ec">
+<img width="330" alt="Captura de pantalla 2024-11-02 a la(s) 11 09 52" src="https://github.com/user-attachments/assets/0e8a4f9a-f30c-4634-990a-0624c4fe7483">
 
 
 # 4. What I consideer is missing?
