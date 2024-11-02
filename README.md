@@ -17,13 +17,13 @@ Link: https://play.google.com/store/apps/details?id=com.google.android.apps.acce
 
 # 2. Explanation
 
-Semantics: Is a widget that annotates the widget tree with a description. It is used by accessibility tools, search engines, and other semantic analysis software to determine the meaning of the app.
+- Semantics: Is a widget that annotates the widget tree with a description. It is used by accessibility tools, search engines, and other semantic analysis software to determine the meaning of the app.
 
-Tooltip: Spoken text-to-speech with accessibility through simple tooltips.
+- Tooltip: Spoken text-to-speech with accessibility through simple tooltips.
 
-SortKey: Tag to identify the node on which the accessibility talkback execution is currently located. This setting must be mandatory to update the UI of a widget in case it is a constant widget, since if it is not added, talkback will not recognize the widget that is being constantly updated.
+- SortKey: Tag to identify the node on which the accessibility talkback execution is currently located. This setting must be mandatory to update the UI of a widget in case it is a constant widget, since if it is not added, talkback will not recognize the widget that is being constantly updated.
 
-Focusable: If the node is focusable to Talkback.
+- Focusable: If the node is focusable to Talkback.
 
 ```
 Semantics(
