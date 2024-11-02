@@ -43,7 +43,7 @@ Semantics(
 <img width="330" alt="Captura de pantalla 2024-11-02 a la(s) 11 09 52" src="https://github.com/user-attachments/assets/0e8a4f9a-f30c-4634-990a-0624c4fe7483">
 
 
-# 4. What I consideer is missing?
+# 4. What I consider is missing?
 
 Although the talk was good, it was focused only on hearing accessibility and internationalization. There are several points where I think accessibility could be added, for example:
 
